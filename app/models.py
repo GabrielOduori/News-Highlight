@@ -11,35 +11,37 @@ class Source:
         6. urlToImage : article image
         7. url : link to the article on the parent website.
     '''
-    def __init__(self,name, title, author,published_at, description, urlToImage, url):
+    # def __init__(self,id,name, title, author,published_at, description, urlToImage, url):
+    def __init__(self,id,name,description, url):
+        self.id = id
         self.name = name
-        self.title  = title
-        self.author  = author
-        self.published_at = published_at
+        # self.title  = title
+        # self.author  = author
+        # self.published_at = published_at
         self.description = description
-        self.urlToImage = urlToImage
+        # self.urlToImage = urlToImage
         self.url = url
 
 
 class Article:
-	'''
+    '''
 	Article Class to define Article Objects
 	'''
-	def __init__(self,name, title, author, published_at,urlToImage, content):
-		'''
-		Function to initialize Article Objects and defines properties 
+    def __init__ (self,name, title, author, published_at,urlToImage, content):
+        '''
+        Function to initialize Article Objects and defines properties 
         each Article object holds.
-	
+        
 		Args: 
-			1. name
-			2. title
-			3. author
-			4. published_at
-			5. urlToImage
-			6. content
+		1. name
+		2. title
+		3. author
+		4. published_at
+		5. urlToImage
+		6. content
 		'''
-		self.name = name
-  		self.title = title
+        self.name = name
+        self.title = title
         self.author = author
         self.published_at = published_at
         self.urlToImage = urlToImage

@@ -1,5 +1,13 @@
 
 
-   <h1>{{title}}</h1> 
+   <h1>{{headline}}</h1> 
 
    <p>THis is great news</p>
+
+   <!-- Business News -->
+   <h3> Popular News</h3>
+         <ul>
+            {% for source in sources_results %}
+                <li>{{source}}</li>
+            {% endfor %}
+        </ul>
