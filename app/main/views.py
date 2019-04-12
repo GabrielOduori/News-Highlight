@@ -1,27 +1,13 @@
-class Sources:
-    '''
-    Class to define sources object
-    '''
-    def __init__(self, name, author, title, description, url, urlToImage, published_at, content):
-        self.name = name
-        self.author  = author
-        self.title  = title
-        self.description = description
-        self.url = url
-        self.urlToImage = urlToImage
-        self.published_at = published_at
-        self.content = content
+from flask import render_template
+from . import main
+# from ..request import get_sources,get_articles
 
+@main.route('/')
+def index():
+	'''
+	View Function that returns the index page and its data
+	'''
 
+	title = 'NEWS API now starting'
 
-class Articles:
-    '''
-    Class to define Article object
-    '''
-    
-    def __init__(self, id, name):
-        self.id = id
-        self.name = name
-
-
-
+	return render_template('index.html', title=title)

@@ -1,6 +1,8 @@
 # import os
 import unittest
 from models import Source, Article
+# Source  = models.Source
+# Article = models.Article
 
 # sys.path.append('./app')
 
@@ -24,7 +26,7 @@ class SourceTest(unittest.TestCase):
 
 class ArticleTest(unittest.TestCase):
     '''
-    Test case to test behavior of teh Article class
+    Test case to test behavior of the Article class
     ''' 
     
     def setUp(self):
