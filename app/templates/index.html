@@ -2,12 +2,29 @@
 
    <h1>{{headline}}</h1> 
 
-   <p>THis is great news</p>
-
    <!-- Business News -->
-   <h3> Popular News</h3>
-         <ul>
-            {% for source in sources_results %}
-                <li>{{source}}</li>
-            {% endfor %}
-        </ul>
+   <h3> Business News</h3>
+    <ul>
+        {% for source in business %}
+            <li>{{source.name}}</li>
+            <a href="{{source.url}}" target="_blank">Got to </a>
+        {% endfor %}
+    </ul>
+
+
+    <h3> Entertainment News</h3>
+    <ul>
+        {% for source in entertainment %}
+            <li>{{source.name}}</li>
+            <a href="{{source.url}}" target="_blank">Got to </a>
+        {% endfor %}
+    </ul>
+
+
+    <h3> Science News</h3>
+    <ul>
+        {% for source in science %}
+            <li>{{source.name}}</li>
+            <a href="{{source.url}}" target="_blank">Got to </a>
+        {% endfor %}
+    </ul>
