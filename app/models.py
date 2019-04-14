@@ -3,47 +3,52 @@ class Source:
     '''
     Source Class to define new sources object
     Args:
-        1. name
-        2. title
-        3. author
-        4. published_at : Date of publication
-        5. description : description of the article
-        6. urlToImage : article image
-        7. url : link to the article on the parent website.
+        1. id
+        2. name
+        3. description:description of the article
+        4. url : link to the article on the parent website
+        5. category: : article image
+        6. language: link to the article on the parent website.
+        7. country:
     '''
-    # def __init__(self,id,name, title, author,published_at, description, urlToImage, url):
-    def __init__(self,id,name,description, url):
+  
+    def __init__(self,id,name,description, url, category, language, country):
         self.id = id
         self.name = name
-        # self.title  = title
-        # self.author  = author
-        # self.published_at = published_at
         self.description = description
-        # self.urlToImage = urlToImage
         self.url = url
+        self.category = category
+        self.language = language
+        self.country = country
+        
 
 
 class Article:
     '''
 	Article Class to define Article Objects
 	'''
-    def __init__ (self,name, title, author, published_at,urlToImage, content):
+    def __init__ (self,source,author,title, description,url,urlToImage, publishedAt,content):
         '''
         Function to initialize Article Objects and defines properties 
         each Article object holds.
         
 		Args: 
-		1. name
-		2. title
-		3. author
-		4. published_at
+		1. source
+		2. author
+		3. title
+		4. description
+        5. url
 		5. urlToImage
 		6. content
+        7. publishedAt
+        8. content
 		'''
-        self.name = name
-        self.title = title
+        self.source = source
         self.author = author
-        self.published_at = published_at
+        self.title = title
+        self.description = description
+        self.url = url
         self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
         self.content = content
 		

@@ -14,7 +14,7 @@ def create_app(config_name):
     
     
     # Initializing bootstrap
-    # bootstrap.init_app(app)
+    bootstrap.init_app(app)
     
     
     # Registering Blueprints

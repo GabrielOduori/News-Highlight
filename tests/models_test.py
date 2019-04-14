@@ -17,7 +17,7 @@ class SourceTest(unittest.TestCase):
         Set up method that will run before every Test
         '''
         
-        self.new_source = Source('BBC', 'Another Crazy News', 'Gabriel Oduori', '10.12.2019','This is one greate news we need to look at','https://i.kinja-img.com/gawker-media/image/upload/s--FSk-nXyV--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/wihsmbwlreqfqviq7fdc.jpg','https://techcrunch.com/2019/04/11/rasa-raises-13m-led-by-accel-for-its-developer-friendly-open-source-approach-to-chatbots/')
+        self.new_source = Source('bbc','BBC', 'Another Crazy News','http://www.bbc.co.uk', 'en','uk')
         
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source, Source))
@@ -34,7 +34,15 @@ class ArticleTest(unittest.TestCase):
         Set up method that will run before every Test
         '''
         
-        self.new_article = Article('BBC', 'Crazy Article', 'Oduori Gabriel', '13.04.2019','https://i.kinja-img.com/gawker-media/image/upload/s--FSk-nXyV--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/wihsmbwlreqfqviq7fdc.jpg','content')
+        self.new_article = Article('BBC',
+                                'Oduori Gabriel',
+                                'Crazy Article', 
+                                'Police say four men were shot outside a venue in Melbourne from a car.', 
+                                'https://www.engadget.com/2019/03/21/square-will-offer-its-new-crypto-employees-payment-in-bitcoin/',
+                                'https://i.kinja-img.com/gawker-media/image/upload/s--FSk-nXyV--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/wihsmbwlreqfqviq7fdc.jpg',
+                                '2019-04-14T03:24:12Z',
+                                'Image copyright Reuters Image caption Police said the men sustained \"horrific injuries\" outside the venue on Sunday morning One man has been killed and three others wounded in a shooting outside a popular nightclub in the Australian city of Melbourne',
+                                )
         
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,Article))

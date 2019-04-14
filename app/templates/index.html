@@ -1,30 +1,78 @@
+{% extends 'base.html'%}
+
+<!-- Style Block -->
+{% block style %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+{% endblock %}
+
+<!-- Content Block -->
+{%  block content %}
 
 
-   <h1>{{headline}}</h1> 
+   <main role="main">
 
-   <!-- Business News -->
-   <h3> Business News</h3>
-    <ul>
-        {% for source in business %}
-            <li>{{source.name}}</li>
-            <a href="{{source.url}}" target="_blank">Got to </a>
-        {% endfor %}
-    </ul>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1 class="display-3">{{headline}}</h1>
+            <p>This is website that craws the other websites and give you back the best news sources around the globe. Whether you are into sports or an avid reader of scientific journal, we got you covered. Why don't you explore some of the stories we brong by clocking at some of our links below?</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+          </div>
+        </div>
+      
 
+    <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+              <div class="col-md-4">
+                <h2>Business News</h2>
+                <p>
+                        <ul>
+                            {% for source in business %}
+                                <li>{{source.name}}</li>
+                                <a href="{{source.url}}" target="_blank">Got to </a>
+                            {% endfor %}
+                        </ul>    
+                
+                </p>
+                <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+              </div>
+              <div class="col-md-4">
+                <h2>Entertainment News</h2>
+                <p>
+                        <ul>
+                            {% for source in entertainment %}
+                                <li>{{source.name}}</li>
+                                <a href="{{source.url}}" target="_blank">Got to </a>
+                            {% endfor %}
+                        </ul>    
+                
+                </p>
+                <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+              </div>
+              <div class="col-md-4">
+                <h2>Science News</h2>
+                <p>
+                
+                        <ul>
+                            {% for source in science %}
+                                <li>{{source.name}}</li>
+                                <a href="{{source.url}}" target="_blank">Got to </a>
+                            {% endfor %}
+                        </ul>    
+                    
+                </p>
+                <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+              </div>
+              
+            </div>
+        
+            <hr>
+        
+          </div> <!-- /container -->
 
-    <h3> Entertainment News</h3>
-    <ul>
-        {% for source in entertainment %}
-            <li>{{source.name}}</li>
-            <a href="{{source.url}}" target="_blank">Got to </a>
-        {% endfor %}
-    </ul>
-
-
-    <h3> Science News</h3>
-    <ul>
-        {% for source in science %}
-            <li>{{source.name}}</li>
-            <a href="{{source.url}}" target="_blank">Got to </a>
-        {% endfor %}
-    </ul>
+{% include 'footer.html' %}
+    {% endblock %}
