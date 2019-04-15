@@ -4,25 +4,26 @@ from .models import Source, Article
 # Getting the AP Key
 api_key = None
 
-# Getting the News base URL
+# Getting News urls
 base_url =None 
 articles_url = None 
 
 def configure_request(app):
     global api_key,base_url, articles_url
-    api_key = app.config['NEWS_API_KEY']
-    base_url = app.config['NEWS_SOURCE_URL']
-    articles_url = app.config['NEWS_ARTICLE_URL']
+    api_key = app.config['API_KEY']
+    base_url = app.config['SOURCE_URL']
+    articles_url = app.config['ARTICLE_URL']
     
     
 
-print(articles_url)
-print(base_url)
+
 def get_sources(category):
     '''
     Function that gets the 
     '''
     get_sources_url = base_url.format(category,api_key)
+    print(articles_url)
+    print(base_url)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()

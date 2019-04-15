@@ -46,8 +46,7 @@ As a user I would like to:
         $(For other operating systems, see https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
         
 * Installing Flask and other Modules
-
-while in the virtalenvironment install all the requirements by running 
+- While in the virtalenvironment install all the requirements by running 
 $ pip install -r requirements.txt
 
         
@@ -58,7 +57,7 @@ $ pip install -r requirements.txt
         * Visit https://newsapi.org/ and register for an API key.
         * In the root directory of the project folder create a file: start.sh in the following format:
         
-                export NEWS_API_KEY='<Your-Api-Key>'
+                export API_KEY='<Your-Api-Key>'
                 python3.7 manage.py server
                 
         * Replace the API Key you received from News Api with <Your-Api-Key>.
@@ -79,7 +78,7 @@ $ pip install -r requirements.txt
 
 ## License information
 
-News Highlight is Copyright 2019 Gabriel ODUORI.
+News Highlight is Copyright 2019 Gabriel Oduori.
 
 News Highlight is a free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. Password Lockeris distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
