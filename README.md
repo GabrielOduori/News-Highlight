@@ -5,7 +5,7 @@
 ## Description
 News Highlights is a web application that displays a list of various news sources for instance Al Jazeera, CNN et cetera. When a user selects a source, the website takes the user to topican news from the source selected. The user can then click on the news article preview and will be taken to the source page of the article. It achieves this by using the The web app is build by consuming data from News API (https://newsapi.org/).
 
-You can view the site at: 
+You can view the site at: https://gabi-news-highlight.herokuapp.com/
 
 ## User Stories
 These are the behaviours/features that the application implements for use by a user.
