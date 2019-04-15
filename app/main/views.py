@@ -1,6 +1,7 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from . import main
 from ..requests import get_sources, get_articles
+from ..models import Source, Article
 
 @main.route('/')
 def index():
@@ -26,18 +27,6 @@ def index():
                            )
 
 
-@main.route('/highlights')
-def top_news():
-    '''
-    '''
-    us_news = get_articles('us')
-    uk_news = get_articles('gb')
-
-    
-    return render_template('articles.html',us=us_news, gb=uk_news )
-
-
-
 @main.route('/articles/<id>')
 def articles(id):
     '''
@@ -45,6 +34,7 @@ def articles(id):
     source using the source id. For example, if the source is BBC, it will take
     in the "id" as bbc-news
     '''
-    aricle = get_article(id)
+    source = get_articles(id)
+    # print(source)
     
-    return render_template('articles.html', id = source)
+    return render_template('articles.html', id=id, source = source)
