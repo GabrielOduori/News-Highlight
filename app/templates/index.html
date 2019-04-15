@@ -4,7 +4,7 @@
 {% block style %}
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
-<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+<!-- <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"> -->
 
 {% endblock %}
 
@@ -17,84 +17,125 @@
           <div class="container">
             <h1 class="display-3">{{headline}}</h1>
             <p>This is website that craws the other websites and give you back the best news sources around the globe. Whether you are into sports or an avid reader of scientific journal, we got you covered. Why don't you explore some of the stories we brong by clocking at some of our links below?</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+
           </div>
         </div>
       
     <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <h2>Business News</h2>
-                <p>
-                        <ul>
-                            {% for source in business %}
-                                <li>{{source.name}}</li>
-                                <a href="{{source.url}}" target="_blank">Got to </a>
-                            {% endfor %}
-                        </ul>    
-                </p>
-              </div>
-              <div class="col-md-4">
-                <h2>Entertainment News</h2>
-                <p>
-                        <ul>
-                            {% for source in entertainment %}
-                                <li>{{source.name}}</li>
-                                <a href="{{source.url}}" target="_blank">Got to </a>
-                            {% endfor %}
-                        </ul>    
-                </p>
-              </div>
-              <div class="col-md-4">
-                <h2>Science News</h2>
-                <p>
-                
-                        <ul>
-                            {% for source in science %}
-                                <li>{{source.name}}</li>
-                                <a href="{{source.url}}" target="_blank">Got to </a>
-                            {% endfor %}
-                        </ul>    
-                    
-                </p>
-              </div>
-              <div class="col-md-4">
-                  <h2>Technology News</h2>
-                  <p>
-                          <ul>
-                              {% for source in technology %}
-                                  <li>{{source.name}}</li>
-                                  <a href="{{source.url}}" target="_blank">Got to </a>
-                              {% endfor %}
-                          </ul>    
-                      
-                  </p>
+
+<div class="container"> 
+<h3 style="text-align: justify"> <strong>General News</strong></h3>
+
+{% for source in business %}
+    <div class="col-md-4">
+        <div class ="card-styles" style="height:10em">
+            <div class ="col-md-4">
+                <div class="card-header">
+                    <p><strong>{{ source.name}}</strong> </p> 
                 </div>
+            </div>
+            <div class="col-md-8">   
+                <div class ="card-body">
+                    <p> {{source.description|truncate(100)}} </p>
+                    <a href="/articles/{{source.id}}"> View Articles</a>
+                </div>       
+            </div> 
+        </div>
+    </div>
+
+    {% endfor %}
+
+  </div>
 
 
-                <div class="col-md-4">
-                    <h2>Sports News</h2>
-                    <p>
-                    
-                            <ul>
-                                {% for source in sports %}
-                                    <li>{{source.name}}</li>
-                                    <a href="{{source.url}}" target="_blank">Got to </a>
-                                {% endfor %}
-                            </ul>    
-                        
-                    </p>
+  <div class="container"> 
+      <h3 style="text-align: left"> <strong>Entertainment News</strong></h3>
+      
+      {% for source in entertainment %}
+          <div class="col-md-4">
+              <div class ="card-styles" style="height:10em">
+                  <div class ="col-md-4">
+                      <div class="card-header">
+                          <p><strong>{{ source.name}}</strong> </p> 
+                      </div>
                   </div>
+                  <div class="col-md-8">   
+                      <div class ="card-body">
+                          <p> {{source.description|truncate(100)}} </p>
+                          <a href="/articles/{{source.id}}"> View Articles</a>
+                      </div>       
+                  </div> 
+              </div>
+          </div>
+      
+          {% endfor %}
+      
+        </div>
 
+
+        <div class="container"> 
+            <h3 style="text-align: left"> <strong>Tech News</strong></h3>
+            
+            {% for source in technology %}
+                <div class="col-md-4">
+                    <div class ="card-styles" style="height:10em">
+                        <div class ="col-md-4">
+                            <div class="card-header">
+                                <p><strong>{{ source.name}}</strong> </p> 
+                            </div>
+                        </div>
+                        <div class="col-md-8">   
+                            <div class ="card-body">
+                                <p> {{source.description|truncate(100)}} </p>
+                                <a href="/articles/{{source.id}}"> View Articles</a>
+                            </div>       
+                        </div> 
+                    </div>
+                </div>
+            
+                {% endfor %}
+            
+              </div>
+
+
+              <div class="container"> 
+                  <h3 style="text-align: left"> <strong>Sports </strong></h3>
+                  
+                  {% for source in sports %}
+                      <div class="col-md-4">
+                          <div class ="card-styles" style="height:10em">
+                              <div class ="col-md-4">
+                                  <div class="card-header">
+                                      <p><strong>{{ source.name}}</strong> </p> 
+                                  </div>
+                              </div>
+                              <div class="col-md-8">   
+                                  <div class ="card-body">
+                                      <p> {{source.description|truncate(100)}} </p>
+                                      <a href="/articles/{{source.id}}"> View Articles</a>
+                                  </div>       
+                              </div> 
+                          </div>
+                      </div>
+                  
+                      {% endfor %}
+                  
+                    </div>
+
+
+<!-- 
+  
+           
+    
 
                   <div class="col-md-4">
-                      <h2>General News</h2>
+                      <h2><strong>General News</strong></h2>
                       <p>
                       
                               <ul>
                                   {% for source in general %}
                                       <li>{{source.name}}</li>
-                                      <a href="{{source.url}}" target="_blank">Got to </a>
+                                      <a href="/articles/{{source.id}}"> View Articles</a>
                                   {% endfor %}
                               </ul>    
                           
@@ -105,7 +146,7 @@
         
             <hr>
         
-          </div> <!-- /container -->
+          </div> /container -->
 
 {% include 'footer.html' %}
     {% endblock %}
