@@ -22,8 +22,8 @@ def get_sources(category):
     Function that gets the 
     '''
     get_sources_url = base_url.format(category,api_key)
-    print(articles_url)
-    print(base_url)
+    # print(articles_url)
+    # print(base_url)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
