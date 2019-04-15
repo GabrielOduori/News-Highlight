@@ -22,7 +22,7 @@ As a user I would like to:
 | :---------------- | :---------------: | ------------------: |
 | Display news sources | **On page load** | List of various news sources is displayed per category |
 | Display articles from a news source | **Click a news source** | Redirected to a page with a list of articles from the source |
-| Display the preview of an article | **On page load** | Each article displays an image, title, description and publication date |
+| Display the preview of an article | **View Articles** | Each article displays an image, title, description and publication date |
 | Read an entire article | **Click an article** | Redirected to the news source's site to read the entire article |
 
 ## SetUp / Installation Requirements
@@ -47,9 +47,9 @@ As a user I would like to:
         
 * Installing Flask and other Modules
 
-        $ python3.7 -m pip install Flask
-        $ python3.7 -m pip install Flask-Bootstrap
-        $ python3.7 -m pip install Flask-Script
+while in the virtalenvironment install all the requirements by running 
+$ pip install -r requirements.txt
+
         
 * Setting up the API Key
         
