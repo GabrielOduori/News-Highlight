@@ -14,6 +14,7 @@ def index():
     sports_sources = get_sources('sports')
     general_sources = get_sources('general')
     technology_sources = get_sources('technology')
+    title = "News Highlights"
     
     headline = 'Home of news highlights'
     return render_template('index.html', 
@@ -35,6 +36,5 @@ def articles(id):
     in the "id" as bbc-news
     '''
     source = get_articles(id)
-    # print(source)
     
     return render_template('articles.html', id=id, source = source)

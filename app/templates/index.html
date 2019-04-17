@@ -13,18 +13,18 @@
    <main role="main">
 
         <!-- Main jumbotron-->
-        <div class="jumbotron">
+        <div class="jumbotron" style="background-color:seashell">
           <div class="container">
-            <h1 class="display-3">{{headline}}</h1>
+            <h1 class="display-3" style="color:midnightblue">{{headline}}</h1>
             <p>This is website uses the News API to look through other websites and give you back the best news sources around the globe. Whether you are into sports or an avid reader of scientific journal, we got you covered.</p>
 
           </div>
         </div>
       
-    <div class="container">
+    <!-- <div class="container"> -->
 
 <div class="container"> 
-<h3 style="text-align: justify"> <strong>General News</strong></h3>
+<h3 style="text-align: center; color: brown"> <strong>General News</strong></h3>
 
 {% for source in business %}
     <div class="col-md-4">
@@ -46,11 +46,11 @@
     {% endfor %}
 
   </div>
-
+<hr>
 
   <div class="container"> 
-      <h3 style="text-align: left"> <strong>Entertainment News</strong></h3>
-      
+      <h3 style="text-align: center; color:darkslategrey"> <strong>Entertainment News</strong></h3>
+      <br>
       {% for source in entertainment %}
           <div class="col-md-4">
               <div class ="card-styles" style="height:10em">
@@ -72,10 +72,12 @@
       
         </div>
 
+<hr>
 
         <div class="container"> 
-            <h3 style="text-align: left"> <strong>Tech News</strong></h3>
+            <h3 style="text-align: center; color:firebrick"> <strong>Tech News</strong></h3>
             
+            <br>
             {% for source in technology %}
                 <div class="col-md-4">
                     <div class ="card-styles" style="height:10em">
@@ -97,10 +99,10 @@
             
               </div>
 
-
+<hr>
               <div class="container"> 
-                  <h3 style="text-align: left"> <strong>Sports </strong></h3>
-                  
+                  <h3 style="text-align: center; color:maroon"><strong>Sports </strong></h3>
+                  <br>
                   {% for source in sports %}
                       <div class="col-md-4">
                           <div class ="card-styles" style="height:10em">
@@ -119,8 +121,11 @@
                       </div>
                   
                       {% endfor %}
+                  <hr>
                   
-                    </div>
+                </div>
 
 {% include 'footer.html' %}
+
+<br>
     {% endblock %}
